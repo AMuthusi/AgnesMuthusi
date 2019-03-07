@@ -14,7 +14,7 @@ try {
         
         }
         stage('Build docker image') {
-            sh "docker build -t mwanjau_moringa:latest ."
+            sh "docker build -t amuthusi_docker:latest ."
         }
         stage('Docker login to hub and push the image') {
             sh "docker login -u 'amuthusi' -p 'Wanza23*G' "
@@ -24,8 +24,7 @@ try {
         stage('Apply changes to the environment'){
             sh "ls -l"
         }
-	stage('Run the docker image')
-{
+	    stage('Run the docker image'){
             sh "docker container run -d amuthusi/amuthusi_docker:latest"
 
         }
